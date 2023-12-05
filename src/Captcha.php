@@ -195,8 +195,9 @@ class Captcha
         }
 
         // 保存验证码
-        $uniqid = Hash::make($code);
-        $code = $this->authcode(strtoupper(implode('', $code)));
+        $codeString = implode('', $code);
+        $uniqid = Hash::make($codeString);
+        $code = $this->authcode(strtoupper($codeString));
         $secode = [];
         $secode['verify_code'] = $code; // 把校验码保存到cache
         $secode['verify_time'] = time(); // 验证码创建时间

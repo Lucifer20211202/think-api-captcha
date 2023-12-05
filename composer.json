@@ -1,0 +1,22 @@
+{
+  "name": "think-api/think-api-captcha",
+  "require": {
+    "topthink/framework": "~v5.1.42"
+  },
+  "autoload": {
+    "psr-4": {
+      "think\\captcha\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "conflict": {
+    "think/captcha": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "topthink/think-installer": true
+    }
+  }
+}

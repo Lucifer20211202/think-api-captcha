@@ -3,6 +3,7 @@
 namespace think\captcha;
 
 use think\facade\Cache;
+use think\helper\Hash;
 
 /**
  * @property float $imageW
@@ -23,8 +24,6 @@ use think\facade\Cache;
  */
 class Captcha
 {
-
-    private $uniqid;
 
     protected $config = [
         'seKey'    => 'ThinkPHP.CN',
@@ -196,7 +195,7 @@ class Captcha
         }
 
         // 保存验证码
-        $uniqid = $this->authcode($this->seKey);
+        $uniqid = Hash::make($code);
         $code = $this->authcode(strtoupper(implode('', $code)));
         $secode = [];
         $secode['verify_code'] = $code; // 把校验码保存到cache

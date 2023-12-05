@@ -1,6 +1,13 @@
 {
   "name": "think-api/think-api-captcha",
+  "type": "library",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
+    "topthink/think-helper": "^1.0.5",
+    "ext-gd": "*"
+  },
+  "require-dev": {
     "topthink/framework": "~v5.1.42"
   },
   "autoload": {
@@ -12,11 +19,6 @@
     ]
   },
   "conflict": {
-    "think/captcha": "*"
-  },
-  "config": {
-    "allow-plugins": {
-      "topthink/think-installer": true
-    }
+    "think/captcha": "~2.0"
   }
 }
